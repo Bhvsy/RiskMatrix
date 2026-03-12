@@ -1,0 +1,2021 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>Advanced Prop Firm Risk & Drawdown Matrix — Bhavishya Parjapati | Bhvsy OS</title>
+  <meta name="description" content="Advanced Prop Firm Risk & Drawdown Matrix by Bhavishya Parjapati — Global Digital Architect & Master Trader. Institutional-grade lot sizing, drawdown compliance tracking, pip value calculator, and risk parameter engine built for funded traders worldwide. Part of the Bhvsy OS digital ecosystem." />
+  <meta name="keywords" content="prop firm risk calculator, drawdown matrix, lot size calculator, funded trader tool, risk management, Bhavishya Parjapati, Bhvsy OS, prop firm drawdown, forex risk calculator, trading risk matrix, FTMO calculator, prop firm compliance, pip value calculator, position size calculator" />
+  <meta name="author" content="Bhavishya Parjapati" />
+  <meta name="creator" content="Bhavishya Parjapati" />
+  <meta name="publisher" content="Bhvsy OS" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <meta name="rating" content="general" />
+  <meta name="revisit-after" content="3 days" />
+  <link rel="canonical" href="https://bhvsy.github.io/RiskMatrix/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Bhvsy OS — Digital Ecosystem by Bhavishya Parjapati" />
+  <meta property="og:title" content="Advanced Prop Firm Risk & Drawdown Matrix | Bhvsy OS" />
+  <meta property="og:description" content="Institutional-grade risk management calculator for funded traders. Calculate precise lot sizes, drawdown limits, pip values, and risk parameters for prop firm compliance. Built by Bhavishya Parjapati." />
+  <meta property="og:url" content="https://bhvsy.github.io/RiskMatrix/" />
+  <meta property="og:locale" content="en_US" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Prop Firm Risk & Drawdown Matrix | Bhvsy OS" />
+  <meta name="twitter:description" content="Institutional-grade risk calculator for funded traders by Bhavishya Parjapati. Lot sizing, drawdown tracking, pip value — all in one terminal." />
+
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#030308" />
+
+  <!-- Structured Data: WebApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Prop Firm Risk & Drawdown Matrix",
+    "alternateName": "Bhvsy OS Risk Matrix",
+    "description": "Advanced institutional-grade risk management calculator for funded traders. Calculate lot sizes, drawdown limits, pip values, and risk parameters for prop firm compliance.",
+    "url": "https://bhvsy.github.io/RiskMatrix/",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web Browser",
+    "browserRequirements": "Requires JavaScript",
+    "softwareVersion": "1.0.0",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Bhavishya Parjapati",
+      "jobTitle": "Global Digital Architect & Master Trader",
+      "url": "https://bhvsy.github.io"
+    },
+    "creator": {
+      "@type": "Organization",
+      "name": "Bhvsy OS",
+      "url": "https://bhvsy.github.io",
+      "founder": {
+        "@type": "Person",
+        "name": "Bhavishya Parjapati"
+      }
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Bhvsy OS",
+      "url": "https://bhvsy.github.io"
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Bhvsy OS Home", "item": "https://bhvsy.github.io" },
+        { "@type": "ListItem", "position": 2, "name": "Risk Matrix", "item": "https://bhvsy.github.io/RiskMatrix/" }
+      ]
+    }
+  }
+  </script>
+
+  <!-- Structured Data: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is drawdown in prop firm trading?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Drawdown is the maximum loss a trader is allowed to incur on a funded account before the account is breached. Prop firms enforce two types: Daily Drawdown (max loss in a single day) and Maximum Drawdown (total cumulative loss from initial balance or highest equity). Exceeding either limit results in account termination."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is lot size calculated for prop firm compliance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lot size is calculated by dividing the dollar amount you are willing to risk per trade by the pip/point value of your stop loss. The formula is: Lot Size = (Account Balance × Risk Percentage) / (Stop Loss in Pips × Pip Value per Standard Lot). This ensures each trade risks only a controlled fraction of your account."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between daily and maximum drawdown?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Daily drawdown is the maximum loss permitted in a single trading day, typically calculated from the start-of-day equity or balance. Maximum drawdown is the total cumulative loss allowed from the initial account balance or the highest recorded equity point. Both are independent limits — breaching either one results in account failure."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much should I risk per trade on a funded account?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most professional funded traders risk between 0.5% and 2% of their account balance per trade. Conservative risk (0.5-1%) provides more room for consecutive losses and is recommended for newer funded traders. The ideal risk depends on your win rate, average risk-reward ratio, and how close you are to your drawdown limits."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if I exceed my drawdown limit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If you exceed either your daily or maximum drawdown limit, most prop firms will automatically close all open positions and terminate or suspend your funded account. You would typically need to purchase a new challenge or evaluation to regain a funded account. Some firms offer reset options at a discounted fee."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who built the Bhvsy OS Risk Matrix?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Prop Firm Risk & Drawdown Matrix was engineered by Bhavishya Parjapati, a Global Digital Architect and Master Trader. It is part of the Bhvsy OS digital ecosystem — a suite of institutional-grade tools designed for funded traders and fintech professionals."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ═══════════════════════════════════════════════
+       RESET & CUSTOM PROPERTIES
+       ═══════════════════════════════════════════════ */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg-void:       #030308;
+      --bg-card:       rgba(8, 12, 28, 0.88);
+      --bg-card-solid: #080c1c;
+      --bg-input:      rgba(0, 0, 0, 0.45);
+      --border-glass:  rgba(0, 240, 255, 0.07);
+      --border-hover:  rgba(0, 240, 255, 0.28);
+      --border-focus:  rgba(0, 240, 255, 0.45);
+      --cyan:          #00f0ff;
+      --cyan-dim:      rgba(0, 240, 255, 0.6);
+      --cyan-ghost:    rgba(0, 240, 255, 0.08);
+      --purple:        #8b5cf6;
+      --purple-ghost:  rgba(139, 92, 246, 0.08);
+      --red:           #ff006e;
+      --red-ghost:     rgba(255, 0, 110, 0.08);
+      --green:         #00ff88;
+      --green-ghost:   rgba(0, 255, 136, 0.08);
+      --amber:         #fbbf24;
+      --amber-ghost:   rgba(251, 191, 36, 0.08);
+      --text-primary:  #e4e8f1;
+      --text-muted:    #7a8ba7;
+      --text-dim:      #4a5568;
+      --font-display:  'Space Grotesk', sans-serif;
+      --font-body:     'Inter', sans-serif;
+      --font-mono:     'JetBrains Mono', monospace;
+      --panel-radius:  16px;
+    }
+
+    html { scroll-behavior: smooth; scrollbar-width: thin; scrollbar-color: var(--cyan-dim) var(--bg-void); }
+    html::-webkit-scrollbar { width: 6px; }
+    html::-webkit-scrollbar-track { background: var(--bg-void); }
+    html::-webkit-scrollbar-thumb { background: rgba(0,240,255,0.22); border-radius: 3px; }
+
+    body {
+      font-family: var(--font-body); background: var(--bg-void);
+      color: var(--text-primary); min-height: 100vh;
+      overflow-x: hidden; line-height: 1.6;
+      -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ═══════════════════════════════════════════════
+       BOOT / LOADING SCREEN
+       ═══════════════════════════════════════════════ */
+    .boot-screen {
+      position: fixed; inset: 0; z-index: 10000;
+      background: var(--bg-void);
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 24px;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+    .boot-screen.dismissed { opacity: 0; visibility: hidden; pointer-events: none; }
+    .boot-diamond {
+      width: 18px; height: 18px; background: var(--cyan);
+      transform: rotate(45deg);
+      box-shadow: 0 0 16px rgba(0,240,255,0.5), 0 0 40px rgba(0,240,255,0.2);
+      animation: bootPulse 1.2s ease-in-out infinite;
+    }
+    @keyframes bootPulse {
+      0%, 100% { transform: rotate(45deg) scale(1); opacity: 1; }
+      50% { transform: rotate(45deg) scale(1.3); opacity: 0.6; }
+    }
+    .boot-title {
+      font-family: var(--font-display); font-size: 18px; font-weight: 700;
+      color: #fff; letter-spacing: 2px;
+    }
+    .boot-sub {
+      font-family: var(--font-mono); font-size: 11px; color: var(--text-dim);
+      letter-spacing: 1px;
+    }
+    .boot-bar-track {
+      width: 200px; height: 2px; background: rgba(255,255,255,0.06);
+      border-radius: 1px; overflow: hidden;
+    }
+    .boot-bar-fill {
+      height: 100%; width: 0%; border-radius: 1px;
+      background: linear-gradient(90deg, var(--cyan), var(--purple));
+      animation: bootFill 1.8s ease-in-out forwards;
+    }
+    @keyframes bootFill { to { width: 100%; } }
+
+    /* ═══════════════════════════════════════════════
+       AMBIENT BACKGROUND
+       ═══════════════════════════════════════════════ */
+    .bg-ambient {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      transform: translateZ(0); will-change: transform;
+      background:
+        linear-gradient(rgba(0,240,255,0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,240,255,0.015) 1px, transparent 1px),
+        radial-gradient(ellipse 700px 500px at 12% 6%, rgba(0,240,255,0.04), transparent),
+        radial-gradient(ellipse 600px 450px at 88% 82%, rgba(139,92,246,0.035), transparent),
+        radial-gradient(ellipse 500px 350px at 50% 45%, rgba(255,0,110,0.012), transparent);
+      background-size: 48px 48px, 48px 48px, 100% 100%, 100% 100%, 100% 100%;
+    }
+    .bg-ambient::after {
+      content: ''; position: fixed; inset: 0;
+      background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.025) 2px, rgba(0,0,0,0.025) 4px);
+      pointer-events: none;
+    }
+
+    .page-wrapper { position: relative; z-index: 1; max-width: 1400px; margin: 0 auto; padding: 0 28px 80px; }
+
+    /* ═══════════════════════════════════════════════
+       ANNOUNCEMENT BAR
+       ═══════════════════════════════════════════════ */
+    .announce-bar {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 10px 20px;
+      background: linear-gradient(90deg, rgba(139,92,246,0.08), rgba(0,240,255,0.06), rgba(139,92,246,0.08));
+      border-bottom: 1px solid rgba(139,92,246,0.1);
+      margin: 0 -28px; text-align: center;
+    }
+    .announce-bar .a-badge {
+      font-family: var(--font-mono); font-size: 9px; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase; padding: 2px 10px;
+      color: var(--purple); background: rgba(139,92,246,0.12);
+      border: 1px solid rgba(139,92,246,0.2); border-radius: 999px;
+    }
+    .announce-bar p {
+      font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);
+      letter-spacing: 0.3px;
+    }
+    .announce-bar p strong { color: #fff; font-weight: 600; }
+
+    /* ═══════════════════════════════════════════════
+       NAVIGATION
+       ═══════════════════════════════════════════════ */
+    .top-nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 28px;
+      background: rgba(3,3,8,0.94);
+      backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border-glass);
+      margin: 0 -28px 0;
+    }
+    .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-logo { width: 34px; height: 34px; border-radius: 8px; object-fit: contain; }
+    .nav-brand-text { display: flex; flex-direction: column; gap: 1px; }
+    .nav-brand-name { font-family: var(--font-display); font-size: 16px; font-weight: 700; color: #fff; letter-spacing: -0.3px; }
+    .nav-brand-sub { font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); letter-spacing: 1.5px; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 8px; }
+    .nav-btn {
+      display: inline-flex; align-items: center; gap: 7px; padding: 8px 18px;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+      letter-spacing: 0.8px; text-transform: uppercase; text-decoration: none;
+      border-radius: 9px; transition: background 0.25s, border-color 0.25s, color 0.25s;
+      cursor: pointer; border: 1px solid transparent;
+    }
+    .nav-btn svg { width: 13px; height: 13px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .nav-btn.btn-ghost { color: var(--text-muted); background: transparent; border-color: rgba(255,255,255,0.06); }
+    .nav-btn.btn-ghost:hover { color: var(--cyan); border-color: rgba(0,240,255,0.2); background: var(--cyan-ghost); }
+    .nav-btn.btn-primary { color: var(--cyan); background: var(--cyan-ghost); border-color: rgba(0,240,255,0.18); }
+    .nav-btn.btn-primary:hover { background: rgba(0,240,255,0.14); border-color: rgba(0,240,255,0.35); }
+
+    /* ═══════════════════════════════════════════════
+       BREADCRUMB
+       ═══════════════════════════════════════════════ */
+    .breadcrumb-nav {
+      padding: 14px 0 0;
+      margin-bottom: 20px;
+    }
+    .breadcrumb-list {
+      display: flex; align-items: center; gap: 8px;
+      list-style: none;
+      font-family: var(--font-mono); font-size: 11px;
+    }
+    .breadcrumb-list li { display: flex; align-items: center; gap: 8px; }
+    .breadcrumb-list a { color: var(--text-dim); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb-list a:hover { color: var(--cyan); }
+    .breadcrumb-list .bc-sep { color: rgba(255,255,255,0.1); }
+    .breadcrumb-list .bc-current { color: var(--cyan); font-weight: 600; }
+
+    /* ═══════════════════════════════════════════════
+       SYSTEM HEADER BAR
+       ═══════════════════════════════════════════════ */
+    .system-header {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 14px;
+      padding: 14px 22px;
+      background: rgba(5,9,25,0.95);
+      border: 1px solid var(--border-glass);
+      border-radius: 14px;
+      margin-bottom: 20px;
+    }
+    .system-brand { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .system-diamond {
+      width: 10px; height: 10px; background: var(--cyan);
+      transform: rotate(45deg); flex-shrink: 0;
+      box-shadow: 0 0 8px rgba(0,240,255,0.4);
+    }
+    .system-title { font-family: var(--font-display); font-size: 14px; font-weight: 700; color: #fff; letter-spacing: 1px; }
+    .system-sep { font-family: var(--font-mono); font-size: 14px; color: var(--text-dim); }
+    .system-module { font-family: var(--font-mono); font-size: 11px; font-weight: 600; color: var(--cyan); letter-spacing: 1.5px; text-transform: uppercase; }
+    .system-version {
+      font-family: var(--font-mono); font-size: 9px; color: var(--text-dim);
+      padding: 2px 10px; background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.05); border-radius: 6px;
+    }
+    .system-meta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .system-indicator {
+      display: flex; align-items: center; gap: 7px; padding: 4px 13px;
+      background: var(--green-ghost); border: 1px solid rgba(0,255,136,0.15); border-radius: 999px;
+    }
+    .indicator-dot {
+      width: 6px; height: 6px; border-radius: 50%; background: var(--green);
+      box-shadow: 0 0 6px var(--green), 0 0 14px rgba(0,255,136,0.3);
+      animation: sysPulse 2.5s ease-in-out infinite;
+    }
+    @keyframes sysPulse { 0%,100% { opacity:1; } 50% { opacity:0.4; } }
+    .indicator-text { font-family: var(--font-mono); font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--green); }
+    .system-clock { display: flex; align-items: center; gap: 7px; }
+    .clock-label { font-family: var(--font-mono); font-size: 8px; font-weight: 600; letter-spacing: 1.5px; color: var(--text-dim); text-transform: uppercase; }
+    .clock-value { font-family: var(--font-mono); font-size: 13px; font-weight: 700; color: #fff; letter-spacing: 1px; text-shadow: 0 0 8px rgba(0,240,255,0.2); }
+
+    /* ═══════════════════════════════════════════════
+       MARKET SESSIONS BAR
+       ═══════════════════════════════════════════════ */
+    .market-sessions {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
+      margin-bottom: 20px;
+    }
+    .session-card {
+      display: flex; align-items: center; gap: 10px;
+      padding: 12px 16px;
+      background: var(--bg-card); border: 1px solid var(--border-glass);
+      border-radius: 11px; transition: border-color 0.3s;
+    }
+    .session-card:hover { border-color: var(--border-hover); }
+    .session-dot {
+      width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0;
+      background: var(--text-dim); transition: background 0.3s, box-shadow 0.3s;
+    }
+    .session-dot.active {
+      background: var(--green);
+      box-shadow: 0 0 6px var(--green), 0 0 12px rgba(0,255,136,0.25);
+      animation: sysPulse 2s ease-in-out infinite;
+    }
+    .session-info { flex: 1; min-width: 0; }
+    .session-name { font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: #fff; letter-spacing: 0.5px; }
+    .session-time { font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); letter-spacing: 0.3px; }
+    .session-status {
+      font-family: var(--font-mono); font-size: 8px; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-dim);
+      transition: color 0.3s;
+    }
+    .session-status.is-open { color: var(--green); }
+    .session-status.is-closed { color: var(--text-dim); }
+
+    /* ═══════════════════════════════════════════════
+       TERMINAL BOOT SEQUENCE
+       ═══════════════════════════════════════════════ */
+    .terminal-bar {
+      display: flex; align-items: center; gap: 10px;
+      padding: 13px 20px; background: #060a18;
+      border: 1px solid var(--border-glass); border-radius: 12px 12px 0 0;
+    }
+    .td { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .td.r { background: #ff5f57; } .td.y { background: #ffbd2e; } .td.g { background: #28c840; }
+    .tt { margin-left: 12px; font-family: var(--font-mono); font-size: 11.5px; color: var(--text-muted); }
+    .tt span { color: var(--cyan); }
+    .terminal-body {
+      background: #050919; border: 1px solid var(--border-glass); border-top: none;
+      border-radius: 0 0 12px 12px; padding: 20px 22px 16px; margin-bottom: 32px;
+    }
+    .tp { font-family: var(--font-mono); font-size: 11.5px; color: var(--text-muted); line-height: 2; }
+    .tp .c { color: var(--cyan); } .tp .f { color: var(--purple); }
+    .tp .s { color: var(--green); } .tp .cm { color: var(--text-dim); font-style: italic; }
+    .tp .w { color: var(--amber); }
+    .cursor { display: inline-block; width: 8px; height: 16px; background: var(--cyan); margin-left: 3px; vertical-align: text-bottom; animation: blink 1s step-end infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    /* ═══════════════════════════════════════════════
+       SECTION HEADER
+       ═══════════════════════════════════════════════ */
+    .section-header { text-align: center; margin-bottom: 14px; }
+    .section-badge {
+      display: inline-flex; align-items: center; gap: 8px; padding: 6px 18px;
+      font-family: var(--font-mono); font-size: 9px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 2.5px; color: var(--cyan);
+      background: var(--cyan-ghost); border: 1px solid rgba(0,240,255,0.12);
+      border-radius: 999px; margin-bottom: 20px;
+    }
+    .section-badge::before { content: ''; width: 5px; height: 5px; background: var(--cyan); border-radius: 50%; animation: sysPulse 2.5s ease-in-out infinite; }
+    .section-header h1 {
+      font-family: var(--font-display); font-size: clamp(26px, 4.5vw, 46px);
+      font-weight: 700; letter-spacing: -1.5px; line-height: 1.15;
+      background: linear-gradient(135deg, #fff 0%, var(--cyan) 50%, var(--purple) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      margin-bottom: 12px;
+    }
+    .section-header p { font-size: 14px; color: var(--text-muted); max-width: 700px; margin: 0 auto; line-height: 1.7; }
+    .section-header p strong { color: var(--text-primary); font-weight: 500; }
+
+    /* ═══════════════════════════════════════════════
+       WORKFLOW STEPS
+       ═══════════════════════════════════════════════ */
+    .workflow-steps {
+      display: flex; align-items: center; justify-content: center;
+      gap: 0; margin: 28px 0 36px; flex-wrap: wrap;
+    }
+    .wf-step {
+      display: flex; align-items: center; gap: 10px;
+      padding: 10px 20px;
+      font-family: var(--font-mono); font-size: 10px; font-weight: 600;
+      letter-spacing: 1px; text-transform: uppercase; color: var(--text-dim);
+      position: relative;
+    }
+    .wf-step .wf-num {
+      width: 24px; height: 24px; border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 700;
+      background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+      color: var(--text-dim); transition: all 0.3s;
+    }
+    .wf-step.active .wf-num {
+      background: var(--cyan-ghost); border-color: rgba(0,240,255,0.3);
+      color: var(--cyan); box-shadow: 0 0 10px rgba(0,240,255,0.1);
+    }
+    .wf-step.active { color: var(--cyan); }
+    .wf-connector {
+      width: 40px; height: 1px;
+      background: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(0,240,255,0.15), rgba(255,255,255,0.06));
+    }
+
+    /* ═══════════════════════════════════════════════
+       STATS BAR
+       ═══════════════════════════════════════════════ */
+    .stats-bar {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+      margin-bottom: 32px;
+    }
+    .stat-card {
+      background: var(--bg-card); border: 1px solid var(--border-glass);
+      border-radius: 12px; padding: 16px; text-align: center;
+      transition: border-color 0.3s;
+    }
+    .stat-card:hover { border-color: var(--border-hover); }
+    .stat-val { font-family: var(--font-mono); font-size: 20px; font-weight: 700; margin-bottom: 3px; }
+    .stat-val.cyan { color: var(--cyan); }
+    .stat-val.purple { color: var(--purple); }
+    .stat-val.green { color: var(--green); }
+    .stat-val.amber { color: var(--amber); }
+    .stat-lbl { font-family: var(--font-mono); font-size: 8.5px; color: var(--text-dim); letter-spacing: 1.5px; text-transform: uppercase; }
+
+    /* ═══════════════════════════════════════════════
+       DASHBOARD GRID
+       ═══════════════════════════════════════════════ */
+    .dashboard-grid {
+      display: grid; grid-template-columns: 420px 1fr;
+      gap: 22px; margin-bottom: 28px; align-items: start;
+    }
+    .input-column { display: flex; flex-direction: column; gap: 18px; }
+    .output-column { display: flex; flex-direction: column; gap: 18px; }
+
+    /* ═══════════════════════════════════════════════
+       GLASS PANEL
+       ═══════════════════════════════════════════════ */
+    .panel {
+      background: var(--bg-card); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      border: 1px solid var(--border-glass); border-radius: var(--panel-radius);
+      padding: 24px 22px; position: relative; overflow: hidden; transition: border-color 0.3s;
+    }
+    .panel::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0,240,255,0.1), transparent);
+    }
+    .panel:hover { border-color: rgba(0,240,255,0.12); }
+
+    .panel-tag {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-family: var(--font-mono); font-size: 8px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 2px;
+      padding: 3px 12px; border-radius: 999px; margin-bottom: 14px;
+    }
+    .panel-tag.cyan { color: var(--cyan); background: var(--cyan-ghost); border: 1px solid rgba(0,240,255,0.1); }
+    .panel-tag.purple { color: var(--purple); background: var(--purple-ghost); border: 1px solid rgba(139,92,246,0.1); }
+    .panel-tag.green { color: var(--green); background: var(--green-ghost); border: 1px solid rgba(0,255,136,0.1); }
+    .panel-tag.amber { color: var(--amber); background: var(--amber-ghost); border: 1px solid rgba(251,191,36,0.1); }
+    .panel-tag.red { color: var(--red); background: var(--red-ghost); border: 1px solid rgba(255,0,110,0.1); }
+    .panel-tag .tag-dot { width: 4px; height: 4px; border-radius: 50%; background: currentColor; opacity: 0.7; }
+    .panel-title { font-family: var(--font-display); font-size: 17px; font-weight: 700; color: #fff; letter-spacing: -0.3px; margin-bottom: 20px; }
+
+    /* ═══════════════════════════════════════════════
+       INPUT FIELDS & RANGE SLIDERS
+       ═══════════════════════════════════════════════ */
+    .input-group { margin-bottom: 20px; }
+    .input-group:last-child { margin-bottom: 0; }
+
+    .input-label {
+      display: flex; align-items: center; gap: 6px;
+      font-family: var(--font-mono); font-size: 9.5px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-dim);
+      margin-bottom: 8px;
+    }
+    .label-tooltip {
+      width: 14px; height: 14px; border-radius: 50%;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-family: var(--font-mono); font-size: 8px; font-weight: 700;
+      color: var(--text-dim); background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06); cursor: help;
+      position: relative;
+    }
+    .label-tooltip:hover { color: var(--cyan); border-color: rgba(0,240,255,0.2); }
+    .label-tooltip .tip-text {
+      display: none; position: absolute; bottom: calc(100% + 8px); left: 50%;
+      transform: translateX(-50%); width: 220px; padding: 10px 12px;
+      font-family: var(--font-mono); font-size: 10px; font-weight: 400;
+      line-height: 1.6; letter-spacing: 0; text-transform: none; color: var(--text-muted);
+      background: #0d1228; border: 1px solid rgba(0,240,255,0.15); border-radius: 8px;
+      z-index: 50; pointer-events: none;
+    }
+    .label-tooltip:hover .tip-text { display: block; }
+
+    .input-wrapper { position: relative; }
+    .input-prefix, .input-suffix {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      font-family: var(--font-mono); font-size: 13px; font-weight: 500;
+      color: var(--text-dim); pointer-events: none; transition: color 0.25s;
+    }
+    .input-prefix { left: 14px; }
+    .input-suffix { right: 14px; font-size: 11px; letter-spacing: 0.5px; }
+
+    .input-field {
+      width: 100%; padding: 13px 14px;
+      font-family: var(--font-mono); font-size: 14px; font-weight: 500; color: #fff;
+      background: var(--bg-input); border: 1px solid rgba(0,240,255,0.07);
+      border-radius: 10px; outline: none;
+      transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
+    }
+    .input-field.has-prefix { padding-left: 32px; }
+    .input-field.has-suffix { padding-right: 38px; }
+    .input-field:hover { border-color: rgba(0,240,255,0.14); background: rgba(0,0,0,0.55); }
+    .input-field:focus {
+      border-color: var(--border-focus);
+      box-shadow: 0 0 0 3px rgba(0,240,255,0.05), 0 0 20px rgba(0,240,255,0.03);
+      background: rgba(0,0,0,0.6);
+    }
+    .input-wrapper:focus-within .input-prefix,
+    .input-wrapper:focus-within .input-suffix { color: var(--cyan-dim); }
+    .input-field::placeholder { color: rgba(74,85,104,0.6); font-weight: 400; }
+    .input-field[type="number"]::-webkit-outer-spin-button,
+    .input-field[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    .input-field[type="number"] { -moz-appearance: textfield; }
+
+    /* Range Slider */
+    .range-slider-wrap { margin-top: 10px; }
+    .range-slider {
+      --fill: 0%;
+      -webkit-appearance: none; appearance: none;
+      width: 100%; height: 3px; border-radius: 2px; outline: none; cursor: pointer;
+      background: linear-gradient(to right, var(--cyan) 0%, var(--cyan) var(--fill), rgba(255,255,255,0.06) var(--fill));
+      transition: background 0.1s;
+    }
+    .range-slider::-webkit-slider-thumb {
+      -webkit-appearance: none; width: 14px; height: 14px; border-radius: 50%;
+      background: var(--cyan); border: 2px solid rgba(0,240,255,0.3); cursor: pointer;
+      box-shadow: 0 0 8px rgba(0,240,255,0.45), 0 0 18px rgba(0,240,255,0.15);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .range-slider::-webkit-slider-thumb:hover {
+      box-shadow: 0 0 12px rgba(0,240,255,0.7), 0 0 28px rgba(0,240,255,0.25);
+      transform: scale(1.15);
+    }
+    .range-slider::-moz-range-thumb {
+      width: 14px; height: 14px; border-radius: 50%;
+      background: var(--cyan); border: 2px solid rgba(0,240,255,0.3); cursor: pointer;
+      box-shadow: 0 0 8px rgba(0,240,255,0.45);
+    }
+    .range-slider::-moz-range-progress { background: var(--cyan); height: 3px; border-radius: 2px; }
+    .range-slider::-moz-range-track { background: rgba(255,255,255,0.06); height: 3px; border-radius: 2px; border: none; }
+
+    .range-labels {
+      display: flex; justify-content: space-between; margin-top: 6px;
+      font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); letter-spacing: 0.3px;
+    }
+
+    /* Select Dropdown */
+    .select-field {
+      width: 100%; padding: 13px 40px 13px 14px;
+      font-family: var(--font-mono); font-size: 14px; font-weight: 500; color: #fff;
+      background: var(--bg-input); border: 1px solid rgba(0,240,255,0.07);
+      border-radius: 10px; outline: none; cursor: pointer;
+      appearance: none; -webkit-appearance: none; -moz-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%234a5568' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 14px center;
+      transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
+    }
+    .select-field:hover { border-color: rgba(0,240,255,0.14); background-color: rgba(0,0,0,0.55); }
+    .select-field:focus { border-color: var(--border-focus); box-shadow: 0 0 0 3px rgba(0,240,255,0.05); background-color: rgba(0,0,0,0.6); }
+    .select-field option { background: #0a0e22; color: #fff; font-family: var(--font-mono); }
+
+    .input-hint { font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); margin-top: 5px; letter-spacing: 0.3px; }
+
+    /* Quick Presets */
+    .preset-row {
+      display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px;
+    }
+    .preset-btn {
+      padding: 5px 12px; font-family: var(--font-mono); font-size: 10px; font-weight: 600;
+      color: var(--text-dim); background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06); border-radius: 7px;
+      cursor: pointer; transition: all 0.2s; letter-spacing: 0.3px;
+    }
+    .preset-btn:hover { color: var(--cyan); border-color: rgba(0,240,255,0.25); background: var(--cyan-ghost); }
+
+    /* ═══════════════════════════════════════════════
+       CALCULATE & RESET BUTTONS
+       ═══════════════════════════════════════════════ */
+    .btn-calculate {
+      display: flex; align-items: center; justify-content: center; gap: 12px;
+      width: 100%; padding: 17px 24px;
+      font-family: var(--font-mono); font-size: 12px; font-weight: 700;
+      letter-spacing: 3px; text-transform: uppercase; color: #fff;
+      background: linear-gradient(135deg, rgba(0,240,255,0.07), rgba(139,92,246,0.07));
+      border: 1px solid rgba(0,240,255,0.22); border-radius: 13px;
+      cursor: pointer; position: relative; overflow: hidden;
+      transition: all 0.35s;
+    }
+    .btn-calculate::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(0,240,255,0.04), rgba(139,92,246,0.04));
+      opacity: 0; transition: opacity 0.35s;
+    }
+    .btn-calculate:hover {
+      border-color: var(--cyan);
+      box-shadow: 0 0 24px rgba(0,240,255,0.22), 0 0 60px rgba(0,240,255,0.06), inset 0 0 20px rgba(0,240,255,0.03);
+      text-shadow: 0 0 12px rgba(0,240,255,0.4);
+      transform: translateY(-1px);
+    }
+    .btn-calculate:hover::before { opacity: 1; }
+    .btn-calculate:active { transform: translateY(0); }
+    .btn-calculate .btn-icon {
+      width: 14px; height: 14px; border: 2px solid var(--cyan); border-radius: 3px;
+      position: relative; flex-shrink: 0;
+    }
+    .btn-calculate .btn-icon::after {
+      content: ''; position: absolute; inset: 2px; background: var(--cyan);
+      border-radius: 1px; opacity: 0; transition: opacity 0.3s;
+    }
+    .btn-calculate:hover .btn-icon::after { opacity: 1; }
+
+    .action-row { display: flex; gap: 10px; }
+    .btn-secondary {
+      flex: 1; display: flex; align-items: center; justify-content: center; gap: 7px;
+      padding: 11px 14px; font-family: var(--font-mono); font-size: 10px; font-weight: 600;
+      letter-spacing: 1px; text-transform: uppercase; color: var(--text-dim);
+      background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 10px; cursor: pointer; transition: all 0.25s;
+    }
+    .btn-secondary:hover { color: var(--text-muted); border-color: rgba(255,255,255,0.12); }
+    .btn-secondary.btn-danger:hover { color: var(--red); border-color: rgba(255,0,110,0.25); }
+
+    /* ═══════════════════════════════════════════════
+       OUTPUT MATRIX
+       ═══════════════════════════════════════════════ */
+    .output-status-bar {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 10px; padding: 11px 16px;
+      background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.03);
+      border-radius: 9px; margin-bottom: 18px;
+    }
+    .output-status-left { display: flex; align-items: center; gap: 7px; }
+    .output-status-dot {
+      width: 6px; height: 6px; border-radius: 50%; background: var(--amber);
+      box-shadow: 0 0 5px rgba(251,191,36,0.4);
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    .output-status-text { font-family: var(--font-mono); font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--amber); transition: color 0.3s; }
+    .output-session-id { font-family: var(--font-mono); font-size: 8px; color: var(--text-dim); letter-spacing: 0.5px; }
+    .output-timestamp { font-family: var(--font-mono); font-size: 8px; color: var(--text-dim); }
+
+    .output-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 12px; }
+    .output-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 12px; }
+    .output-grid-3x { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 16px; }
+
+    .output-card {
+      background: rgba(5,9,25,0.9); border: 1px solid rgba(0,240,255,0.05);
+      border-radius: 13px; padding: 20px 16px; position: relative; overflow: hidden;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .output-card:hover { border-color: rgba(0,240,255,0.16); box-shadow: 0 0 28px rgba(0,240,255,0.03); }
+    .output-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; }
+    .output-card.ac-cyan::before { background: linear-gradient(90deg, transparent, var(--cyan), transparent); }
+    .output-card.ac-green::before { background: linear-gradient(90deg, transparent, var(--green), transparent); }
+    .output-card.ac-red::before { background: linear-gradient(90deg, transparent, var(--red), transparent); }
+    .output-card.ac-purple::before { background: linear-gradient(90deg, transparent, var(--purple), transparent); }
+    .output-card.ac-amber::before { background: linear-gradient(90deg, transparent, var(--amber), transparent); }
+    .output-card::after {
+      content: ''; position: absolute; bottom: 8px; right: 8px;
+      width: 10px; height: 10px; border-right: 2px solid rgba(0,240,255,0.08); border-bottom: 2px solid rgba(0,240,255,0.08);
+      transition: border-color 0.3s;
+    }
+    .output-card:hover::after { border-color: rgba(0,240,255,0.2); }
+
+    .output-label { font-family: var(--font-mono); font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.8px; color: var(--text-dim); margin-bottom: 12px; }
+    .output-value {
+      font-family: var(--font-mono); font-size: 28px; font-weight: 700;
+      line-height: 1; margin-bottom: 6px; transition: color 0.3s, text-shadow 0.3s;
+    }
+    .output-value.v-cyan { color: var(--cyan); text-shadow: 0 0 16px rgba(0,240,255,0.3), 0 0 36px rgba(0,240,255,0.08); }
+    .output-value.v-green { color: var(--green); text-shadow: 0 0 16px rgba(0,255,136,0.3), 0 0 36px rgba(0,255,136,0.08); }
+    .output-value.v-red { color: var(--red); text-shadow: 0 0 16px rgba(255,0,110,0.3), 0 0 36px rgba(255,0,110,0.08); }
+    .output-value.v-purple { color: var(--purple); text-shadow: 0 0 16px rgba(139,92,246,0.3), 0 0 36px rgba(139,92,246,0.08); }
+    .output-value.v-amber { color: var(--amber); text-shadow: 0 0 16px rgba(251,191,36,0.3), 0 0 36px rgba(251,191,36,0.08); }
+    .output-value.v-dim { color: var(--text-dim); text-shadow: none; }
+    .output-unit { font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); letter-spacing: 0.4px; }
+
+    .output-grid-2 .output-value,
+    .output-grid-3x .output-value { font-size: 22px; }
+
+    /* ═══════════════════════════════════════════════
+       RISK GAUGE
+       ═══════════════════════════════════════════════ */
+    .risk-gauge {
+      background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.03);
+      border-radius: 11px; padding: 16px 18px;
+    }
+    .risk-gauge-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+    .risk-gauge-label { font-family: var(--font-mono); font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--text-dim); }
+    .risk-gauge-level { font-family: var(--font-mono); font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-dim); transition: color 0.3s; }
+    .risk-gauge-track { width: 100%; height: 5px; background: rgba(255,255,255,0.04); border-radius: 3px; overflow: hidden; margin-bottom: 8px; }
+    .risk-gauge-fill { height: 100%; width: 0%; border-radius: 3px; background: linear-gradient(90deg, var(--green) 0%, var(--amber) 50%, var(--red) 100%); transition: width 0.6s cubic-bezier(0.22,1,0.36,1); }
+    .risk-gauge-scale { display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 8px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; color: var(--text-dim); }
+
+    /* ═══════════════════════════════════════════════
+       SCENARIO TABLE
+       ═══════════════════════════════════════════════ */
+    .scenario-table-wrap {
+      margin-top: 16px; background: rgba(0,0,0,0.2);
+      border: 1px solid rgba(255,255,255,0.03); border-radius: 11px;
+      overflow: hidden;
+    }
+    .scenario-table {
+      width: 100%; border-collapse: collapse;
+      font-family: var(--font-mono); font-size: 11px;
+    }
+    .scenario-table caption {
+      text-align: left; padding: 14px 16px 10px;
+      font-family: var(--font-mono); font-size: 9px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 2px; color: var(--text-dim);
+    }
+    .scenario-table thead th {
+      padding: 8px 14px; text-align: left;
+      font-size: 8px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 1.5px; color: var(--text-dim);
+      background: rgba(255,255,255,0.015); border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .scenario-table thead th:not(:first-child) { text-align: right; }
+    .scenario-table tbody td {
+      padding: 10px 14px; color: var(--text-muted);
+      border-bottom: 1px solid rgba(255,255,255,0.02);
+    }
+    .scenario-table tbody td:not(:first-child) { text-align: right; color: var(--text-dim); }
+    .scenario-table tbody tr:last-child td { border-bottom: none; }
+    .scenario-table tbody tr:hover td { background: rgba(0,240,255,0.015); }
+
+    .scenario-tag {
+      font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+      padding: 2px 8px; border-radius: 4px;
+    }
+    .scenario-tag.s-con { color: var(--green); background: rgba(0,255,136,0.06); }
+    .scenario-tag.s-mod { color: var(--amber); background: rgba(251,191,36,0.06); }
+    .scenario-tag.s-agg { color: var(--red); background: rgba(255,0,110,0.06); }
+
+    /* ═══════════════════════════════════════════════
+       PROP FIRMS SECTION
+       ═══════════════════════════════════════════════ */
+    .prop-firms-section {
+      background: var(--bg-card); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      border: 1px solid var(--border-glass); border-radius: var(--panel-radius);
+      padding: 24px 22px; margin-bottom: 28px; position: relative; overflow: hidden;
+    }
+    .prop-firms-section::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(139,92,246,0.15), transparent);
+    }
+    .firms-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 18px; }
+    .firms-header-left { display: flex; align-items: center; gap: 12px; }
+    .firms-title { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: #fff; }
+    .firms-note { font-family: var(--font-mono); font-size: 8px; color: var(--text-dim); letter-spacing: 0.5px; }
+    .firms-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .firm-card {
+      display: flex; align-items: center; gap: 12px; padding: 16px 18px;
+      background: rgba(0,0,0,0.28); border: 1px solid rgba(139,92,246,0.07);
+      border-radius: 11px; text-decoration: none;
+      transition: border-color 0.3s, background 0.3s, box-shadow 0.3s, transform 0.25s; cursor: pointer;
+    }
+    .firm-card:hover { border-color: rgba(139,92,246,0.22); background: rgba(139,92,246,0.03); box-shadow: 0 0 18px rgba(139,92,246,0.05); transform: translateY(-1px); }
+    .firm-index { font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--purple); opacity: 0.45; flex-shrink: 0; }
+    .firm-details { flex: 1; min-width: 0; }
+    .firm-name { display: block; font-family: var(--font-mono); font-size: 12px; font-weight: 600; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .firm-tagline { display: block; font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); margin-top: 2px; }
+    .firm-arrow { font-family: var(--font-mono); font-size: 14px; color: var(--purple); opacity: 0.35; transition: opacity 0.25s, transform 0.25s; flex-shrink: 0; }
+    .firm-card:hover .firm-arrow { opacity: 1; transform: translateX(3px); }
+
+    /* ═══════════════════════════════════════════════
+       HOW TO USE GUIDE
+       ═══════════════════════════════════════════════ */
+    .guide-section {
+      background: var(--bg-card); border: 1px solid var(--border-glass);
+      border-radius: var(--panel-radius); padding: 28px 24px; margin-bottom: 28px;
+      position: relative; overflow: hidden;
+    }
+    .guide-section::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0,255,136,0.12), transparent);
+    }
+    .guide-section h2 {
+      font-family: var(--font-display); font-size: 18px; font-weight: 700;
+      color: #fff; margin-bottom: 22px;
+    }
+    .guide-steps { counter-reset: guide-step; list-style: none; }
+    .guide-steps li {
+      counter-increment: guide-step;
+      display: flex; align-items: flex-start; gap: 16px;
+      padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.03);
+    }
+    .guide-steps li:last-child { border-bottom: none; }
+    .guide-steps li::before {
+      content: counter(guide-step, decimal-leading-zero);
+      font-family: var(--font-mono); font-size: 14px; font-weight: 700;
+      color: var(--cyan); min-width: 30px; padding-top: 1px;
+      opacity: 0.6; flex-shrink: 0;
+    }
+    .guide-step-content h3 {
+      font-family: var(--font-display); font-size: 14px; font-weight: 600;
+      color: #fff; margin-bottom: 4px;
+    }
+    .guide-step-content p {
+      font-family: var(--font-body); font-size: 13px; color: var(--text-muted); line-height: 1.7;
+    }
+
+    /* ═══════════════════════════════════════════════
+       REFERENCE TABLE
+       ═══════════════════════════════════════════════ */
+    .ref-section {
+      background: var(--bg-card); border: 1px solid var(--border-glass);
+      border-radius: var(--panel-radius); padding: 24px; margin-bottom: 28px;
+      overflow-x: auto;
+    }
+    .ref-section h2 {
+      font-family: var(--font-display); font-size: 18px; font-weight: 700;
+      color: #fff; margin-bottom: 18px;
+    }
+    .ref-table {
+      width: 100%; border-collapse: collapse; font-family: var(--font-mono); font-size: 12px;
+    }
+    .ref-table thead th {
+      padding: 10px 16px; text-align: left;
+      font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;
+      color: var(--text-dim); background: rgba(255,255,255,0.015);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .ref-table tbody td {
+      padding: 12px 16px; color: var(--text-muted);
+      border-bottom: 1px solid rgba(255,255,255,0.025);
+    }
+    .ref-table tbody tr:last-child td { border-bottom: none; }
+    .ref-table tbody tr:hover td { background: rgba(0,240,255,0.015); }
+
+    /* ═══════════════════════════════════════════════
+       FAQ ACCORDION
+       ═══════════════════════════════════════════════ */
+    .faq-section {
+      background: var(--bg-card); border: 1px solid var(--border-glass);
+      border-radius: var(--panel-radius); padding: 28px 24px; margin-bottom: 28px;
+      position: relative; overflow: hidden;
+    }
+    .faq-section::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(251,191,36,0.12), transparent);
+    }
+    .faq-section h2 {
+      font-family: var(--font-display); font-size: 18px; font-weight: 700;
+      color: #fff; margin-bottom: 20px;
+    }
+
+    .faq-section details {
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .faq-section details:last-of-type { border-bottom: none; }
+    .faq-section summary {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 0; cursor: pointer; list-style: none;
+      font-family: var(--font-display); font-size: 14px; font-weight: 600;
+      color: var(--text-primary); transition: color 0.25s;
+    }
+    .faq-section summary::-webkit-details-marker { display: none; }
+    .faq-section summary::after {
+      content: '+'; font-family: var(--font-mono); font-size: 18px;
+      color: var(--text-dim); transition: transform 0.3s, color 0.3s;
+      flex-shrink: 0; margin-left: 12px;
+    }
+    .faq-section details[open] summary::after { content: '−'; color: var(--cyan); }
+    .faq-section summary:hover { color: var(--cyan); }
+    .faq-section details[open] summary { color: var(--cyan); }
+    .faq-answer {
+      padding: 0 0 18px;
+      font-family: var(--font-body); font-size: 13px; color: var(--text-muted);
+      line-height: 1.8;
+    }
+    .faq-answer strong { color: var(--text-primary); font-weight: 600; }
+
+    /* ═══════════════════════════════════════════════
+       ABOUT / CREDITS
+       ═══════════════════════════════════════════════ */
+    .about-section {
+      background: var(--bg-card); border: 1px solid var(--border-glass);
+      border-radius: var(--panel-radius); padding: 28px 24px; margin-bottom: 28px;
+      position: relative; overflow: hidden;
+    }
+    .about-section::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0,240,255,0.12), transparent);
+    }
+    .about-header { display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; }
+    .about-avatar {
+      width: 64px; height: 64px; border-radius: 14px; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--cyan-ghost), var(--purple-ghost));
+      border: 1px solid rgba(0,240,255,0.12);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .about-avatar .av-diamond {
+      width: 14px; height: 14px; background: var(--cyan); transform: rotate(45deg);
+      box-shadow: 0 0 10px rgba(0,240,255,0.3);
+    }
+    .about-info { flex: 1; min-width: 200px; }
+    .about-name { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 2px; }
+    .about-title { font-family: var(--font-mono); font-size: 11px; color: var(--cyan); letter-spacing: 0.5px; margin-bottom: 8px; }
+    .about-org { font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); letter-spacing: 0.5px; margin-bottom: 14px; }
+    .about-desc { font-family: var(--font-body); font-size: 13px; color: var(--text-muted); line-height: 1.8; }
+    .about-desc strong { color: var(--text-primary); font-weight: 500; }
+    .about-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+    .about-tag {
+      font-family: var(--font-mono); font-size: 9px; font-weight: 600; letter-spacing: 0.8px;
+      padding: 3px 12px; border-radius: 6px;
+      color: var(--text-dim); background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    /* ═══════════════════════════════════════════════
+       KEYBOARD SHORTCUTS BAR
+       ═══════════════════════════════════════════════ */
+    .shortcuts-bar {
+      display: flex; align-items: center; justify-content: center;
+      flex-wrap: wrap; gap: 18px; padding: 12px 20px;
+      background: var(--bg-card); border: 1px solid var(--border-glass);
+      border-radius: 10px; margin-bottom: 28px;
+    }
+    .shortcut-item { display: flex; align-items: center; gap: 6px; }
+    .shortcut-item kbd {
+      font-family: var(--font-mono); font-size: 9px; font-weight: 700;
+      padding: 3px 7px; border-radius: 4px;
+      color: var(--text-muted); background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .shortcut-item span {
+      font-family: var(--font-mono); font-size: 9px; color: var(--text-dim);
+    }
+
+    /* ═══════════════════════════════════════════════
+       DISCLAIMER
+       ═══════════════════════════════════════════════ */
+    .disclaimer {
+      font-family: var(--font-mono); font-size: 9.5px; color: var(--text-dim);
+      line-height: 1.8; text-align: center; padding: 0 16px; margin-bottom: 28px;
+      letter-spacing: 0.2px;
+    }
+
+    /* ═══════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════ */
+    .status-bar {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px; padding: 15px 22px;
+      background: #060a18; border: 1px solid var(--border-glass);
+      border-radius: 12px; font-family: var(--font-mono); font-size: 10px; color: var(--text-dim);
+    }
+    .sb-indicator { display: flex; align-items: center; gap: 7px; }
+    .sb-dot { width: 6px; height: 6px; background: var(--cyan); border-radius: 50%; animation: sysPulse 2.5s ease-in-out infinite; }
+    .sb-live { color: var(--cyan); font-weight: 500; }
+    .sb-link { color: var(--text-muted); text-decoration: none; transition: color 0.2s; display: inline-flex; align-items: center; gap: 5px; }
+    .sb-link:hover { color: var(--cyan); }
+    .sb-link svg { width: 11px; height: 11px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .sb-sig { color: var(--text-dim); }
+    .sb-sig span { color: var(--cyan); font-weight: 700; }
+
+    /* ═══════════════════════════════════════════════
+       RESPONSIVE
+       ═══════════════════════════════════════════════ */
+    @media (max-width: 1100px) {
+      .dashboard-grid { grid-template-columns: 1fr; }
+      .output-grid-3 { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .page-wrapper { padding: 0 14px 60px; }
+      .announce-bar { margin: 0 -14px; padding: 8px 14px; }
+      .top-nav { margin: 0 -14px 0; padding: 12px 14px; }
+      .system-header { padding: 12px 16px; flex-direction: column; align-items: flex-start; gap: 10px; }
+      .system-meta { width: 100%; justify-content: space-between; }
+      .market-sessions { grid-template-columns: repeat(2, 1fr); }
+      .output-grid-3 { grid-template-columns: 1fr; }
+      .output-grid-2 { grid-template-columns: 1fr; }
+      .output-grid-3x { grid-template-columns: 1fr; }
+      .firms-grid { grid-template-columns: 1fr; }
+      .stats-bar { grid-template-columns: repeat(2, 1fr); }
+      .section-header h1 { font-size: clamp(22px, 6vw, 34px); }
+      .output-value { font-size: 24px; }
+      .workflow-steps { gap: 0; }
+      .wf-connector { width: 20px; }
+      .shortcuts-bar { display: none; }
+      .ref-section { padding: 18px 14px; }
+    }
+    @media (max-width: 480px) {
+      .nav-brand-name { font-size: 14px; }
+      .nav-links .nav-btn span.btn-label-desk { display: none; }
+      .panel { padding: 20px 16px; }
+      .terminal-bar { padding: 10px 14px; }
+      .terminal-body { padding: 14px; }
+      .market-sessions { grid-template-columns: 1fr 1fr; gap: 8px; }
+      .status-bar { flex-direction: column; align-items: flex-start; gap: 6px; padding: 12px 16px; }
+      .stats-bar { grid-template-columns: 1fr 1fr; gap: 8px; }
+      .about-header { flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important; animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══ BOOT SCREEN ═══ -->
+  <div class="boot-screen" id="boot-screen" role="status" aria-label="Loading Bhvsy OS Risk Matrix">
+    <div class="boot-diamond"></div>
+    <div class="boot-title">BHVSY OS</div>
+    <div class="boot-sub">Initializing Risk Matrix Engine...</div>
+    <div class="boot-bar-track"><div class="boot-bar-fill"></div></div>
+  </div>
+
+  <div class="bg-ambient" aria-hidden="true"></div>
+
+  <!-- ═══ ANNOUNCEMENT BAR ═══ -->
+  <div class="announce-bar" role="banner">
+    <span class="a-badge">New</span>
+    <p>Prop Firm Risk & Drawdown Matrix <strong>v1.0</strong> — now live on <strong>Bhvsy OS</strong></p>
+  </div>
+
+  <div class="page-wrapper">
+
+    <!-- ═══ NAVIGATION ═══ -->
+    <nav class="top-nav" aria-label="Primary navigation">
+      <a href="https://bhvsy.github.io" class="nav-brand" aria-label="Return to Bhvsy OS homepage">
+        <img src="/favicon-32x32.png" alt="Bhvsy OS — digital ecosystem by Bhavishya Parjapati" class="nav-logo" width="34" height="34" loading="eager" />
+        <div class="nav-brand-text">
+          <span class="nav-brand-name">Bhvsy OS</span>
+          <span class="nav-brand-sub">Risk Matrix</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <button type="button" id="btn-export-results" class="nav-btn btn-ghost" aria-label="Export calculation results">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span class="btn-label-desk">Export</span>
+        </button>
+        <a href="https://bhvsy.github.io" class="nav-btn btn-primary">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6" /></svg>
+          <span>Home</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- ═══ BREADCRUMB ═══ -->
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb navigation">
+      <ol class="breadcrumb-list" itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="https://bhvsy.github.io" itemprop="item"><span itemprop="name">Bhvsy OS</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="bc-sep" aria-hidden="true">/</span>
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <span class="bc-current" itemprop="name">Risk Matrix</span>
+          <meta itemprop="position" content="2" />
+          <link itemprop="item" href="https://bhvsy.github.io/RiskMatrix/" />
+        </li>
+      </ol>
+    </nav>
+
+    <!-- ═══ SYSTEM HEADER ═══ -->
+    <header class="system-header" role="status">
+      <div class="system-brand">
+        <div class="system-diamond" aria-hidden="true"></div>
+        <span class="system-title">BHVSY OS</span>
+        <span class="system-sep" aria-hidden="true">|</span>
+        <span class="system-module">Global Risk Matrix</span>
+        <span class="system-version">v1.0.0</span>
+      </div>
+      <div class="system-meta">
+        <div class="system-indicator" aria-label="System status: online">
+          <span class="indicator-dot" aria-hidden="true"></span>
+          <span class="indicator-text">System Online</span>
+        </div>
+        <div class="system-clock" aria-label="Current UTC time">
+          <span class="clock-label"><abbr title="Coordinated Universal Time">UTC</abbr></span>
+          <time class="clock-value" id="utc-clock" datetime="">--:--:--</time>
+        </div>
+      </div>
+    </header>
+
+    <!-- ═══ MARKET SESSIONS ═══ -->
+    <section class="market-sessions" aria-label="Global market trading sessions">
+      <div class="session-card" id="session-sydney">
+        <span class="session-dot" id="dot-sydney" aria-hidden="true"></span>
+        <div class="session-info">
+          <div class="session-name">Sydney <abbr title="Australian Securities Exchange">ASX</abbr></div>
+          <div class="session-time">22:00 – 07:00 <abbr title="Coordinated Universal Time">UTC</abbr></div>
+        </div>
+        <span class="session-status is-closed" id="status-sydney">Closed</span>
+      </div>
+      <div class="session-card" id="session-tokyo">
+        <span class="session-dot" id="dot-tokyo" aria-hidden="true"></span>
+        <div class="session-info">
+          <div class="session-name">Tokyo <abbr title="Japan Exchange Group">JPX</abbr></div>
+          <div class="session-time">00:00 – 09:00 <abbr title="Coordinated Universal Time">UTC</abbr></div>
+        </div>
+        <span class="session-status is-closed" id="status-tokyo">Closed</span>
+      </div>
+      <div class="session-card" id="session-london">
+        <span class="session-dot" id="dot-london" aria-hidden="true"></span>
+        <div class="session-info">
+          <div class="session-name">London <abbr title="London Stock Exchange">LSE</abbr></div>
+          <div class="session-time">07:00 – 16:00 <abbr title="Coordinated Universal Time">UTC</abbr></div>
+        </div>
+        <span class="session-status is-closed" id="status-london">Closed</span>
+      </div>
+      <div class="session-card" id="session-newyork">
+        <span class="session-dot" id="dot-newyork" aria-hidden="true"></span>
+        <div class="session-info">
+          <div class="session-name">New York <abbr title="New York Stock Exchange">NYSE</abbr></div>
+          <div class="session-time">13:00 – 22:00 <abbr title="Coordinated Universal Time">UTC</abbr></div>
+        </div>
+        <span class="session-status is-closed" id="status-newyork">Closed</span>
+      </div>
+    </section>
+
+    <!-- ═══ TERMINAL BOOT ═══ -->
+    <div class="terminal-bar" role="presentation" aria-hidden="true">
+      <span class="td r"></span><span class="td y"></span><span class="td g"></span>
+      <span class="tt"><span>bhvsy@risk-engine</span>:~/matrix $</span>
+    </div>
+    <div class="terminal-body" aria-hidden="true">
+      <div class="tp">
+        <span class="cm">// initializing risk computation engine...</span><br />
+        <span class="c">load</span> <span class="f">--module</span> <span class="s">"prop_firm_risk_matrix"</span><br />
+        <span class="c">config</span> <span class="f">--mode</span> <span class="s">"institutional"</span> <span class="f">--precision</span> <span class="s">"0.01"</span><br />
+        <span class="c">connect</span> <span class="f">--sessions</span> <span class="s">"SYD TYO LDN NYC"</span><br />
+        <span class="c">validate</span> <span class="f">--drawdown-rules</span> <span class="s">"daily,max,trailing"</span><br />
+        <span class="c">status</span> <span class="f">--all</span><br />
+        <span class="s">✓ Engine online · All systems nominal · Awaiting trader input</span><span class="cursor"></span>
+      </div>
+    </div>
+
+    <!-- ═══ SECTION HEADER ═══ -->
+    <header class="section-header">
+      <div class="section-badge">Funded Trader Toolkit</div>
+      <h1>Advanced Risk &amp; Drawdown Matrix</h1>
+      <p>
+        Institutional-grade <strong>lot sizing</strong>, <strong>drawdown compliance</strong>,
+        <strong>pip value calculation</strong>, and <strong>risk parameter analysis</strong>
+        engineered for funded traders operating under prop firm rule sets.
+        Built by <strong>Bhavishya Parjapati</strong>.
+      </p>
+    </header>
+
+    <!-- ═══ WORKFLOW STEPS ═══ -->
+    <nav class="workflow-steps" aria-label="Calculator workflow">
+      <div class="wf-step active"><span class="wf-num">1</span> Configure</div>
+      <div class="wf-connector" aria-hidden="true"></div>
+      <div class="wf-step"><span class="wf-num">2</span> Execute</div>
+      <div class="wf-connector" aria-hidden="true"></div>
+      <div class="wf-step"><span class="wf-num">3</span> Analyze</div>
+    </nav>
+
+    <!-- ═══ STATS BAR ═══ -->
+    <section class="stats-bar" aria-label="Platform statistics">
+      <div class="stat-card">
+        <div class="stat-val cyan" id="stat-assets">4</div>
+        <div class="stat-lbl">Asset Classes</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val purple" id="stat-metrics">10</div>
+        <div class="stat-lbl">Output Metrics</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val green" id="stat-precision">0.01</div>
+        <div class="stat-lbl">Lot Precision</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val amber" id="stat-sessions">—</div>
+        <div class="stat-lbl">Sessions Active</div>
+      </div>
+    </section>
+
+    <!-- ═══ KEYBOARD SHORTCUTS ═══ -->
+    <div class="shortcuts-bar" role="note" aria-label="Keyboard shortcuts">
+      <div class="shortcut-item"><kbd>Enter</kbd> <span>Calculate</span></div>
+      <div class="shortcut-item"><kbd>Esc</kbd> <span>Reset</span></div>
+      <div class="shortcut-item"><kbd>Tab</kbd> <span>Next Field</span></div>
+      <div class="shortcut-item"><kbd>↑</kbd><kbd>↓</kbd> <span>Adjust Value</span></div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+         MAIN DASHBOARD
+         ═══════════════════════════════════════════════ -->
+    <main>
+      <article itemscope itemtype="https://schema.org/WebApplication">
+        <meta itemprop="name" content="Prop Firm Risk & Drawdown Matrix" />
+        <meta itemprop="applicationCategory" content="FinanceApplication" />
+        <meta itemprop="url" content="https://bhvsy.github.io/RiskMatrix/" />
+
+        <div class="dashboard-grid">
+
+          <!-- ──── LEFT: INPUT COLUMN ──── -->
+          <div class="input-column">
+
+            <!-- PANEL 1: ACCOUNT PARAMETERS -->
+            <section class="panel" aria-labelledby="panel-title-account">
+              <div class="panel-tag cyan"><span class="tag-dot"></span> Input Zone</div>
+              <h2 class="panel-title" id="panel-title-account">Account Parameters</h2>
+
+              <fieldset style="border:none;">
+                <legend class="input-label" style="padding:0;">
+                  <label for="account-balance">Account Balance</label>
+                  <span class="label-tooltip" aria-label="Help: Account Balance">?
+                    <span class="tip-text" role="tooltip">Enter your total funded account balance in <abbr title="United States Dollars">USD</abbr>. This is the starting equity your prop firm has allocated.</span>
+                  </span>
+                </legend>
+                <div class="input-wrapper">
+                  <span class="input-prefix" aria-hidden="true">$</span>
+                  <input type="number" id="account-balance" class="input-field has-prefix" placeholder="0.00" step="0.01" min="0" max="10000000" autocomplete="off" aria-describedby="hint-balance" />
+                </div>
+                <div class="range-slider-wrap">
+                  <input type="range" id="account-balance-range" class="range-slider" min="0" max="500000" step="500" value="0" aria-label="Account balance slider" />
+                  <div class="range-labels" aria-hidden="true"><span>$0</span><span>$500,000</span></div>
+                </div>
+                <div class="preset-row" role="group" aria-label="Quick balance presets">
+                  <button type="button" class="preset-btn" data-target="account-balance" data-value="10000">$10K</button>
+                  <button type="button" class="preset-btn" data-target="account-balance" data-value="25000">$25K</button>
+                  <button type="button" class="preset-btn" data-target="account-balance" data-value="50000">$50K</button>
+                  <button type="button" class="preset-btn" data-target="account-balance" data-value="100000">$100K</button>
+                  <button type="button" class="preset-btn" data-target="account-balance" data-value="200000">$200K</button>
+                </div>
+                <div class="input-hint" id="hint-balance">Common prop firm account sizes: $10K–$200K</div>
+              </fieldset>
+
+              <div class="input-group" style="margin-top:20px;">
+                <label class="input-label" for="daily-drawdown-limit">
+                  Daily Drawdown Limit
+                  <span class="label-tooltip" aria-label="Help: Daily Drawdown Limit">?
+                    <span class="tip-text" role="tooltip">The maximum percentage loss allowed in a single trading day. Exceeding this results in account termination.</span>
+                  </span>
+                </label>
+                <div class="input-wrapper">
+                  <input type="number" id="daily-drawdown-limit" class="input-field has-suffix" placeholder="0.0" step="0.1" min="0" max="100" autocomplete="off" />
+                  <span class="input-suffix" aria-hidden="true">%</span>
+                </div>
+                <div class="range-slider-wrap">
+                  <input type="range" id="daily-drawdown-limit-range" class="range-slider" min="0" max="20" step="0.5" value="0" aria-label="Daily drawdown limit slider" />
+                  <div class="range-labels" aria-hidden="true"><span>0%</span><span>20%</span></div>
+                </div>
+              </div>
+
+              <div class="input-group">
+                <label class="input-label" for="max-drawdown-limit">
+                  Max Drawdown Limit
+                  <span class="label-tooltip" aria-label="Help: Max Drawdown Limit">?
+                    <span class="tip-text" role="tooltip">The maximum total cumulative loss from the initial balance or highest equity. Once breached, the account is permanently terminated.</span>
+                  </span>
+                </label>
+                <div class="input-wrapper">
+                  <input type="number" id="max-drawdown-limit" class="input-field has-suffix" placeholder="0.0" step="0.1" min="0" max="100" autocomplete="off" />
+                  <span class="input-suffix" aria-hidden="true">%</span>
+                </div>
+                <div class="range-slider-wrap">
+                  <input type="range" id="max-drawdown-limit-range" class="range-slider" min="0" max="30" step="0.5" value="0" aria-label="Max drawdown limit slider" />
+                  <div class="range-labels" aria-hidden="true"><span>0%</span><span>30%</span></div>
+                </div>
+              </div>
+
+              <div class="input-group">
+                <div class="input-label">Drawdown Rule Presets</div>
+                <div class="preset-row" role="group" aria-label="Common drawdown configurations">
+                  <button type="button" class="preset-btn" data-dd-daily="5" data-dd-max="10" id="preset-5-10">5% / 10%</button>
+                  <button type="button" class="preset-btn" data-dd-daily="5" data-dd-max="12" id="preset-5-12">5% / 12%</button>
+                  <button type="button" class="preset-btn" data-dd-daily="4" data-dd-max="8" id="preset-4-8">4% / 8%</button>
+                  <button type="button" class="preset-btn" data-dd-daily="3" data-dd-max="6" id="preset-3-6">3% / 6%</button>
+                </div>
+                <div class="input-hint">Format: Daily <abbr title="Drawdown">DD</abbr> / Max <abbr title="Drawdown">DD</abbr> — industry standard configurations</div>
+              </div>
+            </section>
+
+            <!-- PANEL 2: TRADE EXECUTION -->
+            <section class="panel" aria-labelledby="panel-title-trade">
+              <div class="panel-tag purple"><span class="tag-dot"></span> Execution</div>
+              <h2 class="panel-title" id="panel-title-trade">Trade Execution</h2>
+
+              <div class="input-group">
+                <label class="input-label" for="asset-class">
+                  Asset Class
+                  <span class="label-tooltip" aria-label="Help: Asset Class">?
+                    <span class="tip-text" role="tooltip">Select the instrument category. Pip/point values and lot specifications differ per asset class.</span>
+                  </span>
+                </label>
+                <select id="asset-class" class="select-field" aria-describedby="hint-asset">
+                  <option value="" disabled selected>Select asset class</option>
+                  <option value="forex">Forex (Currency Pairs)</option>
+                  <option value="indices">Indices (Stock Indices)</option>
+                  <option value="metals">Metals (Gold, Silver)</option>
+                  <option value="crypto">Crypto (Digital Assets)</option>
+                </select>
+                <div class="input-hint" id="hint-asset">Lot specs &amp; pip values adjust per asset class</div>
+              </div>
+
+              <div class="input-group">
+                <label class="input-label" for="risk-per-trade">
+                  Risk per Trade
+                  <span class="label-tooltip" aria-label="Help: Risk per Trade">?
+                    <span class="tip-text" role="tooltip">Percentage of your account balance to risk on each individual trade. Professional range: 0.5%–2%.</span>
+                  </span>
+                </label>
+                <div class="input-wrapper">
+                  <input type="number" id="risk-per-trade" class="input-field has-suffix" placeholder="0.0" step="0.1" min="0" max="100" autocomplete="off" />
+                  <span class="input-suffix" aria-hidden="true">%</span>
+                </div>
+                <div class="range-slider-wrap">
+                  <input type="range" id="risk-per-trade-range" class="range-slider" min="0" max="10" step="0.1" value="0" aria-label="Risk per trade slider" />
+                  <div class="range-labels" aria-hidden="true"><span>0%</span><span>10%</span></div>
+                </div>
+              </div>
+
+              <div class="input-group">
+                <label class="input-label" for="stop-loss">
+                  Stop Loss
+                  <span class="label-tooltip" aria-label="Help: Stop Loss">?
+                    <span class="tip-text" role="tooltip">Distance from entry to stop loss in pips (Forex) or points (Indices, Metals, Crypto). Critical for lot size calculation.</span>
+                  </span>
+                </label>
+                <div class="input-wrapper">
+                  <input type="number" id="stop-loss" class="input-field has-suffix" placeholder="0" step="1" min="0" max="10000" autocomplete="off" />
+                  <span class="input-suffix" id="sl-unit-suffix">pips</span>
+                </div>
+                <div class="range-slider-wrap">
+                  <input type="range" id="stop-loss-range" class="range-slider" min="0" max="500" step="1" value="0" aria-label="Stop loss slider" />
+                  <div class="range-labels" aria-hidden="true"><span>0</span><span id="sl-range-max-label">500</span></div>
+                </div>
+                <div class="input-hint">Unit adjusts per asset class via your <abbr title="JavaScript">JS</abbr> engine</div>
+              </div>
+            </section>
+
+            <!-- PANEL 3: ADVANCED PARAMETERS -->
+            <section class="panel" aria-labelledby="panel-title-advanced">
+              <div class="panel-tag amber"><span class="tag-dot"></span> Advanced</div>
+              <h2 class="panel-title" id="panel-title-advanced">Advanced Parameters</h2>
+
+              <div class="input-group">
+                <label class="input-label" for="risk-reward-ratio">
+                  Risk-Reward Ratio (1:X)
+                  <span class="label-tooltip" aria-label="Help: Risk-Reward Ratio">?
+                    <span class="tip-text" role="tooltip">Your target reward relative to risk. A value of 2 means 1:2 <abbr title="Risk to Reward">R:R</abbr> — you aim to gain 2× what you risk.</span>
+                  </span>
+                </label>
+                <div class="input-wrapper">
+                  <span class="input-prefix" aria-hidden="true">1:</span>
+                  <input type="number" id="risk-reward-ratio" class="input-field has-prefix" placeholder="2.0" step="0.1" min="0" max="100" autocomplete="off" />
+                </div>
+                <div class="range-slider-wrap">
+                  <input type="range" id="risk-reward-ratio-range" class="range-slider" min="0" max="10" step="0.1" value="0" aria-label="Risk-reward ratio slider" />
+                  <div class="range-labels" aria-hidden="true"><span>1:0</span><span>1:10</span></div>
+                </div>
+              </div>
+
+              <div class="input-group">
+                <label class="input-label" for="max-positions">
+                  Max Concurrent Positions
+                  <span class="label-tooltip" aria-label="Help: Max Positions">?
+                    <span class="tip-text" role="tooltip">Maximum number of trades open simultaneously. Used to calculate aggregate portfolio risk.</span>
+                  </span>
+                </label>
+                <div class="input-wrapper">
+                  <input type="number" id="max-positions" class="input-field" placeholder="1" step="1" min="1" max="50" autocomplete="off" />
+                </div>
+                <div class="range-slider-wrap">
+                  <input type="range" id="max-positions-range" class="range-slider" min="1" max="20" step="1" value="1" aria-label="Max positions slider" />
+                  <div class="range-labels" aria-hidden="true"><span>1</span><span>20</span></div>
+                </div>
+              </div>
+
+              <div class="input-group">
+                <label class="input-label" for="commission-per-lot">
+                  Commission per Lot
+                  <span class="label-tooltip" aria-label="Help: Commission">?
+                    <span class="tip-text" role="tooltip">Round-trip commission charged per standard lot by your broker. Enter in <abbr title="United States Dollars">USD</abbr>.</span>
+                  </span>
+                </label>
+                <div class="input-wrapper">
+                  <span class="input-prefix" aria-hidden="true">$</span>
+                  <input type="number" id="commission-per-lot" class="input-field has-prefix" placeholder="0.00" step="0.01" min="0" max="100" autocomplete="off" />
+                </div>
+              </div>
+            </section>
+
+            <!-- ACTION BUTTONS -->
+            <button type="button" id="btn-calculate" class="btn-calculate" aria-label="Execute risk calculation">
+              <span class="btn-icon" aria-hidden="true"></span>
+              Initiate Calculation
+            </button>
+            <div class="action-row">
+              <button type="button" id="btn-reset" class="btn-secondary btn-danger" aria-label="Reset all input fields">↻ Reset All</button>
+              <button type="button" id="btn-copy-results" class="btn-secondary" aria-label="Copy results to clipboard">⎘ Copy Results</button>
+            </div>
+
+          </div>
+
+          <!-- ──── RIGHT: OUTPUT COLUMN ──── -->
+          <div class="output-column">
+
+            <section class="panel" aria-labelledby="panel-title-output">
+              <div class="panel-tag green"><span class="tag-dot"></span> Read-Only</div>
+              <h2 class="panel-title" id="panel-title-output">Output Matrix</h2>
+
+              <!-- Status -->
+              <div class="output-status-bar">
+                <div class="output-status-left">
+                  <span class="output-status-dot" id="output-status-dot" aria-hidden="true"></span>
+                  <span class="output-status-text" id="output-status" role="status">Awaiting Input</span>
+                </div>
+                <span class="output-session-id">SESSION <data id="output-session-id" value="">—</data></span>
+                <span class="output-timestamp">LAST RUN: <time id="output-timestamp" datetime="">—</time></span>
+              </div>
+
+              <!-- PRIMARY OUTPUTS — 3 col -->
+              <figure class="output-grid-3" role="group" aria-label="Primary risk outputs">
+                <div class="output-card ac-cyan">
+                  <div class="output-label">Calculated Lot Size</div>
+                  <output class="output-value v-dim" id="output-lot-size" for="account-balance risk-per-trade stop-loss">0.00</output>
+                  <div class="output-unit">Standard Lots</div>
+                </div>
+                <div class="output-card ac-green">
+                  <div class="output-label">Amount at Risk</div>
+                  <output class="output-value v-dim" id="output-amount-at-risk" for="account-balance risk-per-trade">$0.00</output>
+                  <div class="output-unit">Per Trade (<abbr title="United States Dollars">USD</abbr>)</div>
+                </div>
+                <div class="output-card ac-red">
+                  <div class="output-label">Remaining Daily <abbr title="Drawdown">DD</abbr></div>
+                  <output class="output-value v-dim" id="output-remaining-daily-dd" for="account-balance daily-drawdown-limit risk-per-trade">$0.00</output>
+                  <div class="output-unit">Buffer Remaining</div>
+                </div>
+              </figure>
+
+              <!-- SECONDARY OUTPUTS — 2 col -->
+              <figure class="output-grid-2" role="group" aria-label="Drawdown amounts">
+                <div class="output-card ac-amber">
+                  <div class="output-label">Daily <abbr title="Drawdown">DD</abbr> Amount</div>
+                  <output class="output-value v-dim" id="output-daily-dd-amount" for="account-balance daily-drawdown-limit">$0.00</output>
+                  <div class="output-unit">Max Daily Loss Allowed</div>
+                </div>
+                <div class="output-card ac-purple">
+                  <div class="output-label">Max <abbr title="Drawdown">DD</abbr> Amount</div>
+                  <output class="output-value v-dim" id="output-max-dd-amount" for="account-balance max-drawdown-limit">$0.00</output>
+                  <div class="output-unit">Total Loss Threshold</div>
+                </div>
+              </figure>
+
+              <!-- TERTIARY OUTPUTS — 3 col -->
+              <figure class="output-grid-3x" role="group" aria-label="Extended risk metrics">
+                <div class="output-card ac-cyan">
+                  <div class="output-label">Pip Value</div>
+                  <output class="output-value v-dim" id="output-pip-value" for="output-lot-size asset-class">$0.00</output>
+                  <div class="output-unit">Per Pip / Point</div>
+                </div>
+                <div class="output-card ac-amber">
+                  <div class="output-label">Trades Until <abbr title="Drawdown">DD</abbr></div>
+                  <output class="output-value v-dim" id="output-trades-until-dd" for="output-daily-dd-amount output-amount-at-risk">0</output>
+                  <div class="output-unit">Consecutive Losses</div>
+                </div>
+                <div class="output-card ac-green">
+                  <div class="output-label">Expected Profit at <abbr title="Take Profit">TP</abbr></div>
+                  <output class="output-value v-dim" id="output-expected-profit" for="output-amount-at-risk risk-reward-ratio">$0.00</output>
+                  <div class="output-unit">At Target <abbr title="Risk to Reward">R:R</abbr></div>
+                </div>
+              </figure>
+
+              <!-- ADDITIONAL METRICS — 2 col -->
+              <figure class="output-grid-2" role="group" aria-label="Risk utilization metrics">
+                <div class="output-card ac-purple">
+                  <div class="output-label">Risk Utilization</div>
+                  <output class="output-value v-dim" id="output-account-utilization" for="risk-per-trade max-positions daily-drawdown-limit">0%</output>
+                  <div class="output-unit"><abbr title="Drawdown">DD</abbr> Budget Consumed</div>
+                </div>
+                <div class="output-card ac-cyan">
+                  <div class="output-label">Aggregate Risk</div>
+                  <output class="output-value v-dim" id="output-aggregate-risk" for="output-amount-at-risk max-positions">$0.00</output>
+                  <div class="output-unit">All Positions Combined</div>
+                </div>
+              </figure>
+
+              <!-- RISK GAUGE -->
+              <div class="risk-gauge" role="meter" aria-label="Risk assessment gauge" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                <div class="risk-gauge-header">
+                  <span class="risk-gauge-label">Risk Assessment</span>
+                  <span class="risk-gauge-level" id="output-risk-level">—</span>
+                </div>
+                <div class="risk-gauge-track">
+                  <div class="risk-gauge-fill" id="output-risk-gauge" style="width: 0%;"></div>
+                </div>
+                <div class="risk-gauge-scale" aria-hidden="true">
+                  <span>Conservative</span>
+                  <span>Moderate</span>
+                  <span>Aggressive</span>
+                </div>
+              </div>
+
+              <!-- SCENARIO TABLE -->
+              <div class="scenario-table-wrap">
+                <table class="scenario-table" id="scenario-table">
+                  <caption>Risk Scenario Comparison</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Profile</th>
+                      <th scope="col">Risk %</th>
+                      <th scope="col">Amount ($)</th>
+                      <th scope="col">Lot Size</th>
+                      <th scope="col">Trades to <abbr title="Drawdown">DD</abbr></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr id="scenario-conservative">
+                      <td><span class="scenario-tag s-con">Conservative</span></td>
+                      <td id="scenario-con-pct">—</td>
+                      <td id="scenario-con-amt">—</td>
+                      <td id="scenario-con-lot">—</td>
+                      <td id="scenario-con-trades">—</td>
+                    </tr>
+                    <tr id="scenario-moderate">
+                      <td><span class="scenario-tag s-mod">Moderate</span></td>
+                      <td id="scenario-mod-pct">—</td>
+                      <td id="scenario-mod-amt">—</td>
+                      <td id="scenario-mod-lot">—</td>
+                      <td id="scenario-mod-trades">—</td>
+                    </tr>
+                    <tr id="scenario-aggressive">
+                      <td><span class="scenario-tag s-agg">Aggressive</span></td>
+                      <td id="scenario-agg-pct">—</td>
+                      <td id="scenario-agg-amt">—</td>
+                      <td id="scenario-agg-lot">—</td>
+                      <td id="scenario-agg-trades">—</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+            </section>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- ═══ PROP FIRMS ═══ -->
+      <aside class="prop-firms-section" aria-labelledby="firms-heading">
+        <div class="firms-header">
+          <div class="firms-header-left">
+            <div class="panel-tag purple"><span class="tag-dot"></span> Partnered Capital</div>
+            <h2 class="firms-title" id="firms-heading">Recommended Prop Firms</h2>
+          </div>
+          <small class="firms-note">Affiliate links — trade responsibly</small>
+        </div>
+        <div class="firms-grid">
+          <a href="#" id="affiliate-link-1" class="firm-card" target="_blank" rel="noopener noreferrer sponsored">
+            <span class="firm-index">01</span>
+            <div class="firm-details">
+              <span class="firm-name" id="firm-name-1">—</span>
+              <span class="firm-tagline" id="firm-tagline-1">Funding partner</span>
+            </div>
+            <span class="firm-arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="#" id="affiliate-link-2" class="firm-card" target="_blank" rel="noopener noreferrer sponsored">
+            <span class="firm-index">02</span>
+            <div class="firm-details">
+              <span class="firm-name" id="firm-name-2">—</span>
+              <span class="firm-tagline" id="firm-tagline-2">Funding partner</span>
+            </div>
+            <span class="firm-arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="#" id="affiliate-link-3" class="firm-card" target="_blank" rel="noopener noreferrer sponsored">
+            <span class="firm-index">03</span>
+            <div class="firm-details">
+              <span class="firm-name" id="firm-name-3">—</span>
+              <span class="firm-tagline" id="firm-tagline-3">Funding partner</span>
+            </div>
+            <span class="firm-arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </aside>
+
+      <!-- ═══ HOW TO USE GUIDE ═══ -->
+      <section class="guide-section" aria-labelledby="guide-heading">
+        <div class="panel-tag green"><span class="tag-dot"></span> Documentation</div>
+        <h2 id="guide-heading">How to Use This Matrix</h2>
+        <ol class="guide-steps">
+          <li>
+            <div class="guide-step-content">
+              <h3>Enter Your Account Balance</h3>
+              <p>Input the total funded account balance provided by your prop firm. Use the slider or type the exact value. Quick presets are available for common account sizes.</p>
+            </div>
+          </li>
+          <li>
+            <div class="guide-step-content">
+              <h3>Set Drawdown Limits</h3>
+              <p>Configure your prop firm's daily and maximum drawdown rules. Use the preset buttons for industry-standard configurations, or enter custom values for your specific firm.</p>
+            </div>
+          </li>
+          <li>
+            <div class="guide-step-content">
+              <h3>Define Trade Parameters</h3>
+              <p>Select your asset class, set your risk percentage per trade, and input your planned stop loss distance in pips or points.</p>
+            </div>
+          </li>
+          <li>
+            <div class="guide-step-content">
+              <h3>Configure Advanced Settings</h3>
+              <p>Optionally set your target risk-reward ratio, maximum concurrent positions, and commission per lot for more precise calculations.</p>
+            </div>
+          </li>
+          <li>
+            <div class="guide-step-content">
+              <h3>Initiate Calculation &amp; Analyze</h3>
+              <p>Click <em>&ldquo;Initiate Calculation&rdquo;</em> to generate your complete risk matrix. Review lot sizing, drawdown buffers, scenario comparisons, and the risk assessment gauge.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <!-- ═══ QUICK REFERENCE TABLE ═══ -->
+      <section class="ref-section" aria-labelledby="ref-heading">
+        <div class="panel-tag cyan"><span class="tag-dot"></span> Reference</div>
+        <h2 id="ref-heading">Industry-Standard Drawdown Rules</h2>
+        <table class="ref-table">
+          <thead>
+            <tr>
+              <th scope="col">Configuration</th>
+              <th scope="col">Daily <abbr title="Drawdown">DD</abbr></th>
+              <th scope="col">Max <abbr title="Drawdown">DD</abbr></th>
+              <th scope="col"><abbr title="Drawdown">DD</abbr> Type</th>
+              <th scope="col">Common In</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Standard</strong></td>
+              <td>5%</td>
+              <td>10%</td>
+              <td>Balance-Based</td>
+              <td>Most evaluation firms</td>
+            </tr>
+            <tr>
+              <td><strong>Conservative</strong></td>
+              <td>4%</td>
+              <td>8%</td>
+              <td>Balance-Based</td>
+              <td>Strict compliance firms</td>
+            </tr>
+            <tr>
+              <td><strong>Aggressive</strong></td>
+              <td>5%</td>
+              <td>12%</td>
+              <td>Equity-Based</td>
+              <td>Higher-risk programs</td>
+            </tr>
+            <tr>
+              <td><strong>Trailing</strong></td>
+              <td>3%</td>
+              <td>6%</td>
+              <td>Trailing from Equity High</td>
+              <td>Scaled account programs</td>
+            </tr>
+          </tbody>
+        </table>
+        <small class="input-hint" style="display:block; margin-top:12px; text-align:center;">
+          Values shown are common industry configurations. Always verify with your specific prop firm's official rules.
+        </small>
+      </section>
+
+      <!-- ═══ FAQ ACCORDION ═══ -->
+      <section class="faq-section" aria-labelledby="faq-heading">
+        <div class="panel-tag amber"><span class="tag-dot"></span> Knowledge Base</div>
+        <h2 id="faq-heading">Frequently Asked Questions</h2>
+
+        <details>
+          <summary>What is drawdown in prop firm trading?</summary>
+          <div class="faq-answer">
+            <p><strong>Drawdown</strong> is the maximum loss a trader is allowed to incur on a funded account before the account is breached. Prop firms enforce two types: <strong>Daily Drawdown</strong> (max loss in a single day) and <strong>Maximum Drawdown</strong> (total cumulative loss from initial balance or highest equity). Exceeding either limit results in account termination.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>How is lot size calculated for prop firm compliance?</summary>
+          <div class="faq-answer">
+            <p>Lot size is calculated by dividing the dollar amount you are willing to risk per trade by the pip/point value of your stop loss. The formula is: <strong>Lot Size = (Account Balance × Risk %) ÷ (Stop Loss in Pips × Pip Value per Standard Lot)</strong>. This ensures each trade risks only a controlled fraction of your account and keeps you within drawdown limits.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>What is the difference between daily and maximum drawdown?</summary>
+          <div class="faq-answer">
+            <p><strong>Daily drawdown</strong> is the maximum loss permitted in a single trading day, typically calculated from the start-of-day equity or balance. <strong>Maximum drawdown</strong> is the total cumulative loss allowed from the initial account balance or the highest recorded equity point. Both are independent limits — breaching either one results in account failure.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>How much should I risk per trade on a funded account?</summary>
+          <div class="faq-answer">
+            <p>Most professional funded traders risk between <strong>0.5% and 2%</strong> of their account balance per trade. Conservative risk (0.5–1%) provides more room for consecutive losses and is recommended for newer funded traders. The ideal risk depends on your win rate, average <abbr title="Risk to Reward">R:R</abbr> ratio, and how close you are to your drawdown limits.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>What happens if I exceed my drawdown limit?</summary>
+          <div class="faq-answer">
+            <p>If you exceed either your daily or maximum drawdown limit, most prop firms will <strong>automatically close all open positions and terminate</strong> or suspend your funded account. You would typically need to purchase a new challenge or evaluation to regain a funded account. Some firms offer reset options at a discounted fee.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Who built the Bhvsy OS Risk Matrix?</summary>
+          <div class="faq-answer">
+            <p>The <strong>Prop Firm Risk &amp; Drawdown Matrix</strong> was engineered by <strong>Bhavishya Parjapati</strong>, a Global Digital Architect and Master Trader. It is part of the <strong>Bhvsy OS</strong> digital ecosystem — a suite of institutional-grade tools designed for funded traders and fintech professionals worldwide. Learn more at <a href="https://bhvsy.github.io" style="color:var(--cyan); text-decoration:none;">bhvsy.github.io</a>.</p>
+          </div>
+        </details>
+      </section>
+
+      <!-- ═══ ABOUT ═══ -->
+      <section class="about-section" aria-labelledby="about-heading">
+        <div class="panel-tag cyan"><span class="tag-dot"></span> Architect</div>
+        <div class="about-header">
+          <div class="about-avatar" aria-hidden="true"><div class="av-diamond"></div></div>
+          <div class="about-info">
+            <h2 class="about-name" id="about-heading">Bhavishya Parjapati</h2>
+            <div class="about-title">Global Digital Architect · Master Trader</div>
+            <div class="about-org">Founder, <strong>Bhvsy OS</strong> Digital Ecosystem</div>
+            <p class="about-desc">
+              The <strong>Prop Firm Risk &amp; Drawdown Matrix</strong> is part of the <strong>Bhvsy OS</strong> platform — a suite of institutional-grade tools, trading utilities, and digital infrastructure engineered by <strong>Bhavishya Parjapati</strong> for the global funded trading community. Every component is designed with precision, performance, and trader-first architecture in mind.
+            </p>
+            <address class="about-tags" style="font-style:normal;">
+              <span class="about-tag">Bhvsy OS</span>
+              <span class="about-tag">FinTech</span>
+              <span class="about-tag">Risk Engineering</span>
+              <span class="about-tag">Funded Trading</span>
+              <span class="about-tag">Digital Architecture</span>
+            </address>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ═══ DISCLAIMER ═══ -->
+    <small class="disclaimer" role="note">
+      <strong>Disclaimer:</strong> This tool is provided for educational and informational purposes only.
+      It does not constitute financial advice, investment recommendation, or solicitation to trade.
+      Always verify lot sizing and drawdown calculations against your prop firm's specific rules before
+      executing trades. Past performance is not indicative of future results. The creator,
+      <cite>Bhavishya Parjapati</cite>, and <cite>Bhvsy OS</cite> assume no liability for trading losses.
+      Use at your own risk. Trade responsibly.
+    </small>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer class="status-bar" role="contentinfo">
+      <div class="sb-indicator">
+        <span class="sb-dot" aria-hidden="true"></span>
+        <span class="sb-live">Matrix Active</span>
+      </div>
+      <a href="https://bhvsy.github.io" class="sb-link">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+          <polyline points="9 22 9 12 15 12 15 22" />
+        </svg>
+        bhvsy.github.io
+      </a>
+      <span class="sb-sig">engineered by <span>Bhavishya Parjapati</span></span>
+    </footer>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════════════
+       SCRIPTS — UI ONLY (No calculation logic)
+       ═══════════════════════════════════════════════ -->
+  <script>
+    /* ═══ BOOT SCREEN DISMISS ═══ */
+    (function () {
+      var boot = document.getElementById('boot-screen');
+      if (!boot) return;
+      setTimeout(function () { boot.classList.add('dismissed'); }, 2200);
+    })();
+
+    /* ═══ LIVE UTC CLOCK ═══ */
+    (function () {
+      var el = document.getElementById('utc-clock');
+      if (!el) return;
+      function tick() {
+        var n = new Date();
+        var ts = n.getUTCHours().toString().padStart(2, '0') + ':' +
+                 n.getUTCMinutes().toString().padStart(2, '0') + ':' +
+                 n.getUTCSeconds().toString().padStart(2, '0');
+        el.textContent = ts;
+        el.setAttribute('datetime', n.toISOString());
+      }
+      tick();
+      setInterval(tick, 1000);
+    })();
+
+    /* ═══ SESSION ID ═══ */
+    (function () {
+      var el = document.getElementById('output-session-id');
+      if (!el) return;
+      var c = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', id = '';
+      for (var i = 0; i < 8; i++) id += c.charAt(Math.floor(Math.random() * c.length));
+      el.textContent = id;
+      el.setAttribute('value', id);
+    })();
+
+    /* ═══ MARKET SESSIONS ═══ */
+    (function () {
+      var sessions = [
+        { id: 'sydney',  start: 22, end: 7  },
+        { id: 'tokyo',   start: 0,  end: 9  },
+        { id: 'london',  start: 7,  end: 16 },
+        { id: 'newyork', start: 13, end: 22 }
+      ];
+      function update() {
+        var h = new Date().getUTCHours();
+        var activeCount = 0;
+        sessions.forEach(function (s) {
+          var isOpen;
+          if (s.start < s.end) {
+            isOpen = h >= s.start && h < s.end;
+          } else {
+            isOpen = h >= s.start || h < s.end;
+          }
+          var dot = document.getElementById('dot-' + s.id);
+          var status = document.getElementById('status-' + s.id);
+          if (dot) {
+            if (isOpen) { dot.classList.add('active'); } else { dot.classList.remove('active'); }
+          }
+          if (status) {
+            status.textContent = isOpen ? 'Open' : 'Closed';
+            status.className = 'session-status ' + (isOpen ? 'is-open' : 'is-closed');
+          }
+          if (isOpen) activeCount++;
+        });
+        var statEl = document.getElementById('stat-sessions');
+        if (statEl) statEl.textContent = activeCount + '/4';
+      }
+      update();
+      setInterval(update, 30000);
+    })();
+
+    /* ═══ RANGE ↔ INPUT SYNC ═══ */
+    (function () {
+      var pairs = [
+        { input: 'account-balance',       range: 'account-balance-range' },
+        { input: 'daily-drawdown-limit',  range: 'daily-drawdown-limit-range' },
+        { input: 'max-drawdown-limit',    range: 'max-drawdown-limit-range' },
+        { input: 'risk-per-trade',        range: 'risk-per-trade-range' },
+        { input: 'stop-loss',             range: 'stop-loss-range' },
+        { input: 'risk-reward-ratio',     range: 'risk-reward-ratio-range' },
+        { input: 'max-positions',         range: 'max-positions-range' }
+      ];
+
+      function updateFill(rangeEl) {
+        var min = parseFloat(rangeEl.min) || 0;
+        var max = parseFloat(rangeEl.max) || 100;
+        var val = parseFloat(rangeEl.value) || 0;
+        var pct = ((val - min) / (max - min)) * 100;
+        rangeEl.style.setProperty('--fill', pct + '%');
+      }
+
+      pairs.forEach(function (p) {
+        var inp = document.getElementById(p.input);
+        var rng = document.getElementById(p.range);
+        if (!inp || !rng) return;
+
+        updateFill(rng);
+
+        rng.addEventListener('input', function () {
+          inp.value = rng.value;
+          updateFill(rng);
+        });
+
+        inp.addEventListener('input', function () {
+          var v = parseFloat(inp.value) || 0;
+          var rMin = parseFloat(rng.min) || 0;
+          var rMax = parseFloat(rng.max) || 100;
+          rng.value = Math.min(Math.max(v, rMin), rMax);
+          updateFill(rng);
+        });
+      });
+    })();
+
+    /* ═══ PRESET BUTTONS — BALANCE ═══ */
+    (function () {
+      document.querySelectorAll('.preset-btn[data-target]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var target = document.getElementById(btn.getAttribute('data-target'));
+          var range = document.getElementById(btn.getAttribute('data-target') + '-range');
+          var val = btn.getAttribute('data-value');
+          if (target) {
+            target.value = val;
+            target.dispatchEvent(new Event('input', { bubbles: true }));
+          }
+          if (range) {
+            range.value = val;
+            range.dispatchEvent(new Event('input', { bubbles: true }));
+          }
+        });
+      });
+    })();
+
+    /* ═══ PRESET BUTTONS — DRAWDOWN RULES ═══ */
+    (function () {
+      document.querySelectorAll('.preset-btn[data-dd-daily]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var daily = btn.getAttribute('data-dd-daily');
+          var max = btn.getAttribute('data-dd-max');
+          var dInp = document.getElementById('daily-drawdown-limit');
+          var dRng = document.getElementById('daily-drawdown-limit-range');
+          var mInp = document.getElementById('max-drawdown-limit');
+          var mRng = document.getElementById('max-drawdown-limit-range');
+          if (dInp) { dInp.value = daily; dInp.dispatchEvent(new Event('input', { bubbles: true })); }
+          if (dRng) { dRng.value = daily; dRng.dispatchEvent(new Event('input', { bubbles: true })); }
+          if (mInp) { mInp.value = max; mInp.dispatchEvent(new Event('input', { bubbles: true })); }
+          if (mRng) { mRng.value = max; mRng.dispatchEvent(new Event('input', { bubbles: true })); }
+        });
+      });
+    })();
+
+    /* ═══ KEYBOARD SHORTCUTS (UI triggers only) ═══ */
+    (function () {
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' && !e.shiftKey && !e.ctrlKey) {
+          var active = document.activeElement;
+          var isInput = active && (active.tagName === 'INPUT' || active.tagName === 'SELECT');
+          if (isInput || active === document.body) {
+            var btn = document.getElementById('btn-calculate');
+            if (btn) btn.click();
+          }
+        }
+        if (e.key === 'Escape') {
+          var resetBtn = document.getElementById('btn-reset');
+          if (resetBtn) resetBtn.click();
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>
